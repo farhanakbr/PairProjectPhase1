@@ -1,0 +1,21 @@
+<%- include('./partials/header') %>
+  <%- include('./partials/navbar') %>
+    <form action="/user/register" method="post"> <br>
+      <label for="userName">User Name</label> <br>
+      <input type="text" name="username" id="userName"> <br>
+      <label for="email">Email</label> <br>
+      <input type="text" name="email" id="email"> <br>
+      <label for="password">Password</label> <br>
+      <input type="password" name="password" id="password"> <br>
+      <label for="dateOfBirth">Date Of Birth</label> <br>
+      <input type="date" name="dateOfBirth" id="dateOfBirth"> <br>
+      <button>Register</button>
+    </form>
+    <% if(error) { %>
+      <% error.forEach(el=> { %>
+        <p style="color: red;">
+          <%= el %>
+        </p>
+        <% }) %>
+          <% } %>
+            <%- include('./partials/footer') %>

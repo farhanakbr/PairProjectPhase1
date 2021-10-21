@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+  <%- include('./partials/navbar') %>
+
+    <div class="container-md mt-3">
+      <h1 class="text-center">Add Profile</h1>
+      <br>
+      <form action="/customer/<%=data.id%>/profile/add" method="post">
+        <div class="row">
+          <div class="col">
+            <label class="form-label">First Name</label>
+            <input class="form-control" type="text" name="firstName">
+            <br>
+            <label class="form-label">Last Name</label>
+            <input class="form-control" type="text" name="lastName">
+            <br>
+            <label class="form-label">Date of Birth</label>
+            <input class="form-control" type="date" name="dateOfBirth">
+            <br>
+            <label class="form-label">Favourite Genre</label>
+            <input class="form-control" type="text" name="favoriteGenre">
+          </div>
+          <br>
+          <div>
+            <button type="submit" class="btn btn-dark mt-5 mb-5">Submit</button>
+          </div>
+          <% if(err) { %>
+            <% err.forEach(el=> { %>
+              <p style="color: red;">
+                <%= el %>
+              </p>
+              <% }) %>
+                <% } %>
+      </form>
+    </div>
+
+    <%- include('./partials/footer') %>

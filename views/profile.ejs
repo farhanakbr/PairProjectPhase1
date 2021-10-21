@@ -1,0 +1,42 @@
+<%- include('./partials/header') %>
+  <%- include('./partials/navbar') %>
+
+    <div class="container-md mt-3">
+      <h1 class="text-center"><strong>Profile</strong></h1>
+      <br>
+
+      <div class="row">
+        <p class="fs-4">Welcome to Gig's Events!! Music junkies,</p><br>
+      </div>
+
+      <div class="row">
+        <p class="fs-4"><strong>Name :</strong></p>
+        <p class="fs-4">
+          <%=data.firstName%>
+            <%=data.lastName %>
+        </p>
+        <br>
+      </div>
+
+      <div class="row">
+        <p class="fs-4"><strong>Birth Date :</strong></p>
+        <p class="fs-4">
+          <%=data.formatDate%>
+        </p>
+        <br>
+      </div>
+
+      <div class="row">
+        <p class="fs-4"><strong>Favorite Genre :</strong></p>
+        <p class="fs-4">
+          <%=data.favoriteGenre%>
+        </p>
+        <br>
+      </div>
+
+      <button type="submit" class="btn btn-dark mt-1 mb-5"><a href="/customer/<%=data.id%>/profile/edit"
+          style="text-decoration: none; color:white">Edit</a></button>
+    </div>
+
+
+    <%- include('./partials/footer') %>
