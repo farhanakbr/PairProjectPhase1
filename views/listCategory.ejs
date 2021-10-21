@@ -1,0 +1,36 @@
+<%- include('./partials/header') %>
+  <%- include('./partials/navbar') %>
+    <br>
+    <div class="container-md mt-3 justify-content-center">
+      <div class="text-center mb-5">
+        <h3><strong>Category Detail</strong></h3>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="card-deck">
+            <div class="card-group">
+              <% data.GuestStars.forEach(el=> { %>
+                <div class="card-body">
+                  <div class="card" style="width: 21rem;">
+                    <img src="<%= el.imageURL %>" class="card-img-top" alt="<%= el.name %>" style="height: 15rem;">
+                    <div class="card-body">
+                      <h4 class="card-title">
+                        <%= el.name %>
+                      </h4>
+                      <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                          <p class="fs-5">
+                            Debut Year : <%= el.debutYear %>
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%- include('./partials/header') %>

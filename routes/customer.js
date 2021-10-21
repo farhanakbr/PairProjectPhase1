@@ -1,13 +1,12 @@
 const express = require("express")
 const router = express.Router()
-const routerHome = require("./home")
 const { middleware } = require("../helper/helper")
-const userController = require("../controllers/userController")
+const customerController = require("../controllers/customerController")
 
-router.get('/:id/profile', userController.showProfile)
-router.get('/:id/profile/add', userController.addProfile)
-router.post('/:id/profile/add', userController.postAddProfile)
-router.get('/:id/profile/edit', userController.editProfile)
-router.post('/:id/profile/edit', userController.postEditProfile)
+router.get('/:id/profile', customerController.showProfile)
+router.get('/:id/profile/add', customerController.addProfile)
+router.post('/:id/profile/add', customerController.postAddProfile)
+router.get('/:id/profile/edit', customerController.editProfile)
+router.post('/:id/profile/edit', customerController.postEditProfile)
 
 module.exports = router

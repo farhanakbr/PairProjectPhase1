@@ -1,0 +1,50 @@
+<%- include('./partials/header') %>
+  <%- include('./partials/navbar') %>
+    <div class="d-flex container-md mt-3 justify-content-center">
+      <form class="d-flex" action="/home" method="get">
+        <input class="form-control me-2" type="search" name="search" placeholder="Search" aria-label="Search"
+          style="width: 500px;">
+        <button class="btn btn-outline-dark" type="submit">Search</button>
+      </form>
+    </div>
+    <br>
+    <div class="container-md">
+      <div class="text-center mb-5">
+        <h3><strong>Musical Arts</strong></h3>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <div class="card-deck">
+            <div class="card-group">
+              <% data.forEach(el=> { %>
+                <div class="card-body">
+                  <div class="card" style="width: 21rem;">
+                    <img src="<%= el.photo %>" class="card-img-top" alt="<%=el.name%>" style="height: 15rem;">
+                    <div class="card-body">
+                      <h4 class="card-title">
+                        <%=el.name%>
+                      </h4>
+                      <p class="fs-5">Here are some lists of the gueststars :</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                      <% el.GuestStars.forEach(element=> { %>
+                        <% if(el.GuestStars.length) {%>
+                          <li class="list-group-item">
+                            <%= el.GuestStars[0].name%>...
+                          </li>
+                          <% } %>
+                            <% }); %>
+                    </ul>
+                    <div class="card-body">
+                      <a href="/home/category/<%= el.id %>" class="btn btn-dark">List Detail</a>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footer') %>

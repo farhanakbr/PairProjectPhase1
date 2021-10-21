@@ -1,21 +1,20 @@
-<%- include('./partials/header') %>
-  <%- include('./partials/navbar')%>
-    <div class="container-md mt-3">
-      <form action="/user/login" method="post">
-        <div class="mb-3">
-          <label for="usernameOremail" class="form-label">Username of Email</label>
-          <input type="text" class="form-control" name="usernameOremail" id="usernameOremail"
-            aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-        </div>
-        <div class="mb-3">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" id="password">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-      <p>
-        <%= error %>
-      </p>
-    </div>
-    <%- include('./partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <form action="/user/login" method="post">
+    <label for="usernameOremail">Username or Email</label> <br>
+    <input type="text" name="usernameOremail" id="usernameOremail"> <br>
+    <label for="password">Password</label> <br>
+    <input type="password" name="password" id="password"> <br>
+    <button>Login</button>
+    <button><a href="/user/register" style="text-decoration: none;">Sign Up</a></button>
+        <p><%= error %> </p>
+    </form>
+</body>
+</html>

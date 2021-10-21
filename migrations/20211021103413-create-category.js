@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('GuestStars', {
+    await queryInterface.createTable('Categories', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -11,17 +11,8 @@ module.exports = {
       name: {
         type: Sequelize.STRING
       },
-      debutYear: {
-        type: Sequelize.DATE
-      },
-      ConcertId: {
-        type: Sequelize.INTEGER,
-        references: {
-          model: 'Concerts',
-          key:'id',
-          onDelete: 'cascade',
-          onUpdate: 'cascade'
-        }
+      photo: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -34,6 +25,6 @@ module.exports = {
     });
   },
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.dropTable('GuestStars');
+    await queryInterface.dropTable('Categories');
   }
 };

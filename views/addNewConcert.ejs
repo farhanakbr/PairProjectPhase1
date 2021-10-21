@@ -1,0 +1,26 @@
+<%- include('./partials/header') %>
+    <%- include('./partials/navbar') %>
+        <br>
+        <div class="container-md mt-3">
+            <h1 class="text-center">Add New Concert</h1><br><br>
+            <div class="d-flex justify-content-center">
+                <div class="row">
+                    <div class="col">
+                        <form action="/home/concert/add" method="post"> <br>
+                            <label class="form-label">Name</label> <br>
+                            <input class="form-control" type="text" name="name" style="width: 370px;"> <br>
+                            <label class="form-label">Location</label> <br>
+                            <input class="form-control" type="text" name="location"> <br>
+                            <label class="form-label">Date</label> <br>
+                            <input class="form-control" type="date" name="date"> <br>
+                            <label class="form-label">Price</label> <br>
+                            <input class="form-control" type="number" name="price"> <br>
+                            <label class="form-label">Image URL</label> <br>
+                            <input class="form-control" type="text" name="imageURL"> <br>
+                            <button type="submit" class="btn btn-dark">Add Concert</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <%- include('./partials/footer') %>

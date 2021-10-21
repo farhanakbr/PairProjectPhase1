@@ -1,21 +1,32 @@
 <%- include('./partials/header') %>
-  <%- include('./partials/navbar') %>
-    <form action="/user/register" method="post"> <br>
-      <label for="userName">User Name</label> <br>
-      <input type="text" name="username" id="userName"> <br>
-      <label for="email">Email</label> <br>
-      <input type="text" name="email" id="email"> <br>
-      <label for="password">Password</label> <br>
-      <input type="password" name="password" id="password"> <br>
-      <label for="dateOfBirth">Date Of Birth</label> <br>
-      <input type="date" name="dateOfBirth" id="dateOfBirth"> <br>
-      <button>Register</button>
-    </form>
-    <% if(error) { %>
-      <% error.forEach(el=> { %>
-        <p style="color: red;">
-          <%= el %>
-        </p>
-        <% }) %>
-          <% } %>
-            <%- include('./partials/footer') %>
+    <%- include('./partials/navbar') %>
+        <div class="container-md text-left justify-content-center">
+            <div class="mt-5">
+                <h1><strong>Registration</strong></h1>
+            </div>
+            <form action="/user/register" method="post"> <br>
+                <div class="mb-3">
+                    <label for="userName" class="form-label">User Name</label>
+                    <input type="text" class="form-control" name="username" id="userName" style="width: 300px;">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" name="email" id="email" style="width: 300px;">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" style="width: 300px;">
+                </div>
+                <label for="dateOfBirth">Date Of Birth</label> <br>
+                <input type="date" name="dateOfBirth" id="dateOfBirth"><br><br>
+                <button type="submit" class="btn btn-dark bg-dark">Register</button>
+            </form>
+            <% if(error) { %>
+                <% error.forEach(el=> { %>
+                    <p style="color: red;">
+                        <%= el %>
+                    </p>
+                    <% }) %>
+                        <% } %>
+        </div>
+        <%- include('./partials/footer') %>

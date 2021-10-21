@@ -1,0 +1,21 @@
+<%- include('./partials/header') %>
+    <%- include('./partials/navbar') %>
+        <br>
+        <div class="container-md mt-3">
+            <h1 class="text-center">Add New Category Music</h1>
+            <br><br>
+            <div class="d-flex justify-content-center mt-2">
+                <div class="row">
+                    <div class="col">
+                        <label class="form-label">Name</label>
+                        <input class="form-control" type="text" name="name" style="width: 300px;">
+                        <br>
+                        <label class="form-label">Image URL</label>
+                        <input class="form-control" type="text" name="photo" style="width: 300px;">
+                        <div>
+                            <button type="submit" class="btn btn-dark mt-4 mb-5">Add</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <%- include('./partials/footer') %>

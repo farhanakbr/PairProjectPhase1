@@ -22,7 +22,7 @@ function isAdmin(req, res, next) {
     if (req.session.role === 'Admin') {
         next()
     } else {
-        res.redirect('/user/home')
+        res.redirect('/home')
     }
 }
 
